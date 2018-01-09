@@ -131,6 +131,13 @@ module RSpotify
       response = User.oauth_put(@id, url, params.to_json)
     end
 
+    def pause_track
+      url = "me/player/pause"
+      verb = 'put'
+      params = {}
+      response = User.oauth_put(@id, url, params.to_json)
+    end
+
     # Get the current user’s recently played tracks. Requires the *user-read-recently-played* scope.
     #
     # @param limit  [Integer] Optional. The number of entities to return. Default: 20. Minimum: 1. Maximum: 50.
